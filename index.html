@@ -54,10 +54,10 @@
                     </a>
                 </nav>
 
-                <!-- Language Switcher Button -->
+                <!-- Language Switcher Button (Shows active language) -->
                 <button id="lang-toggle" onclick="toggleLanguage()" class="px-3 py-1.5 rounded-lg bg-slate-900 border border-slate-800 text-xs font-semibold text-cyan-400 hover:bg-slate-800 hover:border-cyan-500/50 transition flex items-center gap-2 cursor-pointer shadow-sm">
                     <i class="fa-solid fa-globe text-cyan-400"></i>
-                    <span id="lang-label" class="tracking-wider">FR</span>
+                    <span id="lang-label" class="tracking-wider">EN</span>
                 </button>
             </div>
         </div>
@@ -458,15 +458,15 @@
             if (body.classList.contains('lang-en')) {
                 body.classList.remove('lang-en');
                 body.classList.add('lang-fr');
-                langLabel.textContent = '中文';
+                langLabel.textContent = 'FR';
             } else if (body.classList.contains('lang-fr')) {
                 body.classList.remove('lang-fr');
                 body.classList.add('lang-zh');
-                langLabel.textContent = 'EN';
+                langLabel.textContent = 'ZH';
             } else {
                 body.classList.remove('lang-zh');
                 body.classList.add('lang-en');
-                langLabel.textContent = 'FR';
+                langLabel.textContent = 'EN';
             }
         }
     </script>
