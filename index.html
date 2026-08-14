@@ -3,24 +3,54 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Lachezar Dimitrov — IT Project Manager</title>
+    <title>Lachezar Dimitrov — IT Project Manager & Technical Operations Lead</title>
     <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <!-- AOS Animation Library CSS -->
     <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <style>
+        /* Language Toggle Visibility Rules */
+        body.lang-en .lang-fr { display: none !important; }
+        body.lang-fr .lang-en { display: none !important; }
+    </style>
 </head>
-<body class="bg-slate-950 text-slate-100 font-sans antialiased selection:bg-cyan-500 selection:text-slate-950 overflow-x-hidden">
+<body class="lang-en bg-slate-950 text-slate-100 font-sans antialiased selection:bg-cyan-500 selection:text-slate-950 overflow-x-hidden">
 
     <!-- Header / Navigation -->
     <header class="fixed top-0 left-0 right-0 z-50 bg-slate-950/80 backdrop-blur-md border-b border-slate-800/80">
         <div class="max-w-5xl mx-auto px-6 h-16 flex items-center justify-between">
             <a href="#" class="font-bold text-lg tracking-wider text-cyan-400">LD<span class="text-slate-100">.</span></a>
-            <nav class="hidden md:flex space-x-8 text-sm font-medium text-slate-300">
-                <a href="#about" class="hover:text-cyan-400 transition">About</a>
-                <a href="#experience" class="hover:text-cyan-400 transition">Experience</a>
-                <a href="#skills" class="hover:text-cyan-400 transition">Expertise</a>
-                <a href="#contact" class="hover:text-cyan-400 transition">Contact</a>
-            </nav>
+            
+            <div class="flex items-center gap-6">
+                <nav class="hidden md:flex space-x-8 text-sm font-medium text-slate-300">
+                    <a href="#about" class="hover:text-cyan-400 transition">
+                        <span class="lang-en">About</span>
+                        <span class="lang-fr">À propos</span>
+                    </a>
+                    <a href="#experience" class="hover:text-cyan-400 transition">
+                        <span class="lang-en">Experience</span>
+                        <span class="lang-fr">Expérience</span>
+                    </a>
+                    <a href="#skills" class="hover:text-cyan-400 transition">
+                        <span class="lang-en">Expertise</span>
+                        <span class="lang-fr">Expertise</span>
+                    </a>
+                    <a href="#education" class="hover:text-cyan-400 transition">
+                        <span class="lang-en">Education</span>
+                        <span class="lang-fr">Formation</span>
+                    </a>
+                    <a href="#contact" class="hover:text-cyan-400 transition">
+                        <span class="lang-en">Contact</span>
+                        <span class="lang-fr">Contact</span>
+                    </a>
+                </nav>
+
+                <!-- Language Switcher Button -->
+                <button id="lang-toggle" onclick="toggleLanguage()" class="px-3 py-1.5 rounded-lg bg-slate-900 border border-slate-800 text-xs font-semibold text-cyan-400 hover:bg-slate-800 hover:border-cyan-500/50 transition flex items-center gap-2 cursor-pointer shadow-sm">
+                    <i class="fa-solid fa-globe text-cyan-400"></i>
+                    <span id="lang-label" class="tracking-wider">FR</span>
+                </button>
+            </div>
         </div>
     </header>
 
@@ -28,23 +58,31 @@
     <section class="pt-32 pb-20 md:pt-44 md:pb-32 px-6 max-w-5xl mx-auto">
         <div class="space-y-6" data-aos="fade-up" data-aos-duration="1000">
             <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-cyan-950/50 border border-cyan-800/50 text-cyan-400 text-xs font-semibold tracking-wide uppercase">
-                <span class="w-2 h-2 rounded-full bg-cyan-400 animate-pulse"></span> Available for strategic tech leadership
+                <span class="w-2 h-2 rounded-full bg-cyan-400 animate-pulse"></span>
+                <span class="lang-en">Available for strategic tech leadership</span>
+                <span class="lang-fr">Disponible pour le leadership technique stratégique</span>
             </div>
             <h1 class="text-4xl md:text-6xl font-extrabold tracking-tight text-white">
                 Lachezar Dimitrov
             </h1>
             <p class="text-xl md:text-2xl font-medium text-cyan-400">
-                IT Project Manager & High-Level Operations Lead
+                <span class="lang-en">IT Project Manager & High-Level Operations Lead</span>
+                <span class="lang-fr">Chef de Projet IT & Responsable des Opérations</span>
             </p>
             <p class="text-slate-400 text-base md:text-lg max-w-2xl leading-relaxed">
-                Bridging complex engineering solutions and cross-functional teams. Specializing in high-stakes technical implementations, aerospace accounts, and agile delivery frameworks out of Toulouse, France.
+                <span class="lang-en">Bridging complex engineering solutions and cross-functional teams. Specializing in high-stakes technical implementations, aerospace accounts, DevOps pipeline governance, and agile delivery frameworks in Toulouse, France.</span>
+                <span class="lang-fr">Lien entre solutions d'ingénierie complexes et équipes pluridisciplinaires. Spécialisé dans les déploiements techniques critiques, la gestion de comptes aéronautiques, la gouvernance DevOps et les méthodologies agiles à Toulouse, France.</span>
             </p>
-            <div class="pt-4 flex flex-wrap gap-4">
-                <a href="#contact" class="px-6 py-3 rounded-lg bg-cyan-500 text-slate-950 font-semibold hover:bg-cyan-400 transition shadow-lg shadow-cyan-500/20">
-                    Get in Touch
+            <div class="pt-4 flex flex-wrap gap-4 items-center">
+                <a href="#contact" class="px-6 py-3 rounded-lg bg-cyan-500 text-slate-950 font-semibold hover:bg-cyan-400 transition shadow-lg shadow-cyan-500/20 flex items-center gap-2">
+                    <i class="fa-solid fa-paper-plane"></i>
+                    <span class="lang-en">Get in Touch</span>
+                    <span class="lang-fr">Me Contacter</span>
                 </a>
-                <a href="#experience" class="px-6 py-3 rounded-lg bg-slate-900 border border-slate-800 font-semibold hover:bg-slate-800 transition text-slate-300">
-                    View Career
+                <a href="#experience" class="px-6 py-3 rounded-lg bg-slate-900 border border-slate-800 font-semibold hover:bg-slate-800 transition text-slate-300 flex items-center gap-2">
+                    <i class="fa-solid fa-briefcase text-cyan-400"></i>
+                    <span class="lang-en">View Career</span>
+                    <span class="lang-fr">Voir mon Parcours</span>
                 </a>
             </div>
         </div>
@@ -53,14 +91,53 @@
     <!-- About Section -->
     <section id="about" class="py-20 border-t border-slate-900 px-6 max-w-5xl mx-auto">
         <div data-aos="fade-up" data-aos-duration="800">
-            <h2 class="text-2xl font-bold tracking-tight text-white mb-6">Professional Profile</h2>
+            <div class="flex items-center gap-3 mb-6">
+                <div class="p-2 rounded-lg bg-cyan-950 text-cyan-400 border border-cyan-800/50">
+                    <i class="fa-solid fa-user-gear text-lg"></i>
+                </div>
+                <h2 class="text-2xl font-bold tracking-tight text-white">
+                    <span class="lang-en">Profile & Summary</span>
+                    <span class="lang-fr">Profil & Synthèse</span>
+                </h2>
+            </div>
             <div class="grid md:grid-cols-2 gap-8 text-slate-300 leading-relaxed">
-                <p>
-                    As an experienced IT Project Manager, I orchestrate complex software and infrastructure rollouts, aligning technical engineering workflows with rigorous enterprise objectives. My career centers on directing critical accounts, coordinating multi-disciplinary DevOps and deployment cycles, and maintaining quality under strict regulatory timelines.
-                </p>
-                <p>
-                    Based in the Toulouse region, I combine deep technical insight with structured project governance. Whether managing large account deliverables for aerospace partners or streamlining high-performance software release pipelines, my focus remains squarely on operational clarity and scalable engineering execution.
-                </p>
+                <div class="space-y-4">
+                    <p class="lang-en">
+                        As an experienced IT Project Manager, I orchestrate complex software and infrastructure rollouts, aligning technical engineering workflows with rigorous enterprise objectives. My career centers on directing critical technical accounts, coordinating multi-disciplinary DevOps cycles, and maintaining high release quality under strict regulatory timelines.
+                    </p>
+                    <p class="lang-fr">
+                        En tant que Chef de Projet IT expérimenté, j'orchestre des déploiements complexes de logiciels et d'infrastructures, en alignant les flux de travail techniques avec les objectifs stratégiques de l'entreprise. Ma carrière repose sur la direction de comptes techniques critiques, la coordination de cycles DevOps multidisciplinaires et la garantie d'une haute qualité de livrables sous des délais réglementaires stricts.
+                    </p>
+                    <p class="lang-en">
+                        Based in the Toulouse aerospace hub, I combine deep technical insight with structured project governance to keep engineering squads aligned with business milestones.
+                    </p>
+                    <p class="lang-fr">
+                        Basé au cœur du pôle aéronautique de Toulouse, j'associe une vision technique approfondie à une gouvernance de projet structurée afin de maintenir les équipes d'ingénierie alignées sur les jalons stratégiques.
+                    </p>
+                </div>
+                <div class="space-y-4 bg-slate-900/40 p-6 rounded-xl border border-slate-800/60">
+                    <h3 class="text-sm font-semibold uppercase tracking-wider text-cyan-400 mb-2">
+                        <span class="lang-en">Highlights & Leadership Focus</span>
+                        <span class="lang-fr">Points Forts & Orientations Majeures</span>
+                    </h3>
+                    <ul class="space-y-3 text-sm text-slate-300">
+                        <li class="flex items-start gap-3">
+                            <i class="fa-solid fa-circle-check text-cyan-400 mt-1"></i>
+                            <span class="lang-en"><strong>Enterprise Account Governance:</strong> Strategic account manager for tier-1 aerospace partners.</span>
+                            <span class="lang-fr"><strong>Gouvernance de Comptes Entreprise :</strong> Gestionnaire de compte stratégique pour des partenaires aéronautiques majeurs.</span>
+                        </li>
+                        <li class="flex items-start gap-3">
+                            <i class="fa-solid fa-circle-check text-cyan-400 mt-1"></i>
+                            <span class="lang-en"><strong>DevOps & Deployment Execution:</strong> Managing continuous release flows, build versioning, and environment synchronization.</span>
+                            <span class="lang-fr"><strong>DevOps & Exécution des Déploiements :</strong> Pilotage des flux de release continus, du versionnement et de la synchronisation des environnements.</span>
+                        </li>
+                        <li class="flex items-start gap-3">
+                            <i class="fa-solid fa-circle-check text-cyan-400 mt-1"></i>
+                            <span class="lang-en"><strong>High-Priority Incident Management:</strong> Rapid crisis mitigation and SLA protection for mission-critical IT infrastructure.</span>
+                            <span class="lang-fr"><strong>Gestion des Incidents Majeurs :</strong> Résolution rapide des crises et protection des SLA pour les infrastructures IT critiques.</span>
+                        </li>
+                    </ul>
+                </div>
             </div>
         </div>
     </section>
@@ -68,52 +145,205 @@
     <!-- Experience Section -->
     <section id="experience" class="py-20 border-t border-slate-900 px-6 max-w-5xl mx-auto">
         <div data-aos="fade-up" data-aos-duration="800">
-            <h2 class="text-2xl font-bold tracking-tight text-white mb-10">Experience & Focus</h2>
-            <div class="space-y-8 border-l-2 border-slate-800 pl-6 ml-2">
+            <div class="flex items-center gap-3 mb-10">
+                <div class="p-2 rounded-lg bg-cyan-950 text-cyan-400 border border-cyan-800/50">
+                    <i class="fa-solid fa-briefcase text-lg"></i>
+                </div>
+                <h2 class="text-2xl font-bold tracking-tight text-white">
+                    <span class="lang-en">Professional Experience</span>
+                    <span class="lang-fr">Expérience Professionnelle</span>
+                </h2>
+            </div>
+            
+            <div class="space-y-12 border-l-2 border-slate-800 pl-6 ml-2">
+                <!-- Role 1 -->
                 <div class="relative" data-aos="fade-up" data-aos-delay="100">
                     <span class="absolute -left-[31px] top-1 w-4 h-4 rounded-full bg-cyan-500 border-4 border-slate-950"></span>
-                    <h3 class="text-lg font-semibold text-white">IT Project Manager</h3>
-                    <p class="text-sm text-cyan-400 mb-2">Aerospace & Enterprise Accounts • Toulouse, France</p>
-                    <p class="text-slate-400 text-sm leading-relaxed">
-                        Directing complex technical accounts, governing release cycles, and optimizing cross-functional coordination between engineering teams, DevOps pipelines, and client stakeholders.
+                    <div class="flex flex-wrap items-center justify-between gap-2 mb-1">
+                        <h3 class="text-xl font-bold text-white">
+                            <span class="lang-en">IT Project Manager</span>
+                            <span class="lang-fr">Chef de Projet IT</span>
+                        </h3>
+                        <span class="text-xs font-semibold px-2.5 py-1 rounded bg-slate-900 border border-slate-800 text-slate-400">Toulouse, France</span>
+                    </div>
+                    <p class="text-sm font-medium text-cyan-400 mb-3">
+                        <span class="lang-en">Aerospace & Enterprise Accounts</span>
+                        <span class="lang-fr">Comptes Aéronautiques & Grands Comptes</span>
                     </p>
+                    <ul class="space-y-2 text-slate-400 text-sm leading-relaxed list-disc list-inside lang-en">
+                        <li>Direct technical account operations, managing full lifecycle delivery for major enterprise clients.</li>
+                        <li>Govern software release pipelines and cross-functional DevOps workflows to meet strict regulatory and compliance standards.</li>
+                        <li>Lead agile release planning, sprint reviews, and multi-team synchronization across development and operational units.</li>
+                        <li>Maintain executive stakeholder alignment, risk registries, and scope change management.</li>
+                    </ul>
+                    <ul class="space-y-2 text-slate-400 text-sm leading-relaxed list-disc list-inside lang-fr">
+                        <li>Direction des opérations techniques de comptes et gestion du cycle de vie complet des livrables pour des grands comptes.</li>
+                        <li>Gouvernance des pipelines de livraison logicielle et des flux DevOps transversaux selon des normes strictes de conformité.</li>
+                        <li>Animation du planning de release agile, des revues de sprint et de la synchronisation entre équipes de développement et d'opérations.</li>
+                        <li>Alignement des parties prenantes exécutives, gestion des registres de risques et contrôle des modifications du périmètre.</li>
+                    </ul>
                 </div>
+
+                <!-- Role 2 -->
                 <div class="relative" data-aos="fade-up" data-aos-delay="200">
                     <span class="absolute -left-[31px] top-1 w-4 h-4 rounded-full bg-slate-700 border-4 border-slate-950"></span>
-                    <h3 class="text-lg font-semibold text-white">Technical Operations & Governance</h3>
-                    <p class="text-sm text-cyan-400 mb-2">Systems Architecture & Deployment Oversight</p>
-                    <p class="text-slate-400 text-sm leading-relaxed">
-                        Executing high-priority incident resolutions, managing deployment versions, and ensuring continuous alignment with strict security and systems reliability standards.
+                    <div class="flex flex-wrap items-center justify-between gap-2 mb-1">
+                        <h3 class="text-xl font-bold text-white">
+                            <span class="lang-en">Technical Operations & Governance Lead</span>
+                            <span class="lang-fr">Responsable Opérations Techniques & Gouvernance</span>
+                        </h3>
+                        <span class="text-xs font-semibold px-2.5 py-1 rounded bg-slate-900 border border-slate-800 text-slate-400">
+                            <span class="lang-en">Systems Architecture & Operations</span>
+                            <span class="lang-fr">Architecture Systèmes & Opérations</span>
+                        </span>
+                    </div>
+                    <p class="text-sm font-medium text-cyan-400 mb-3">
+                        <span class="lang-en">Enterprise Systems & Infrastructure</span>
+                        <span class="lang-fr">Systèmes d'Entreprise & Infrastructures</span>
                     </p>
+                    <ul class="space-y-2 text-slate-400 text-sm leading-relaxed list-disc list-inside lang-en">
+                        <li>Managed critical system deployments and emergency incident resolutions to protect service level agreements (SLAs).</li>
+                        <li>Supervised infrastructure readiness, DevOps release pipelines, and version control integrity.</li>
+                        <li>Optimized technical operational standards, post-incident root cause analyses, and preventative maintenance strategies.</li>
+                    </ul>
+                    <ul class="space-y-2 text-slate-400 text-sm leading-relaxed list-disc list-inside lang-fr">
+                        <li>Gestion des déploiements de systèmes critiques et résolution des incidents urgents pour maintenir les engagements de service (SLA).</li>
+                        <li>Supervision de la préparation des infrastructures, des pipelines de mise en production DevOps et de l'intégrité des versions.</li>
+                        <li>Optimisation des standards opérationnels techniques, analyse des causes profondes post-incident et stratégies de maintenance préventive.</li>
+                    </ul>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Skills Section -->
+    <!-- Skills & Core Competencies Section -->
     <section id="skills" class="py-20 border-t border-slate-900 px-6 max-w-5xl mx-auto">
         <div data-aos="fade-up" data-aos-duration="800">
-            <h2 class="text-2xl font-bold tracking-tight text-white mb-8">Core Competencies</h2>
-            <div class="grid grid-cols-2 md:grid-cols-4 gap-4">
-                <div class="p-4 rounded-xl bg-slate-900/50 border border-slate-800/80 hover:border-cyan-500/50 transition duration-300" data-aos="zoom-in" data-aos-delay="100">
-                    <i class="fa-solid fa-diagram-project text-cyan-400 mb-2 text-xl"></i>
-                    <h4 class="font-semibold text-white mb-1">Project Management</h4>
-                    <p class="text-xs text-slate-400">Agile frameworks, risk management, milestone delivery.</p>
+            <div class="flex items-center gap-3 mb-8">
+                <div class="p-2 rounded-lg bg-cyan-950 text-cyan-400 border border-cyan-800/50">
+                    <i class="fa-solid fa-list-check text-lg"></i>
                 </div>
-                <div class="p-4 rounded-xl bg-slate-900/50 border border-slate-800/80 hover:border-cyan-500/50 transition duration-300" data-aos="zoom-in" data-aos-delay="200">
-                    <i class="fa-solid fa-plane text-cyan-400 mb-2 text-xl"></i>
-                    <h4 class="font-semibold text-white mb-1">Aerospace Accounts</h4>
-                    <p class="text-xs text-slate-400">Enterprise client relations, compliance, governance.</p>
+                <h2 class="text-2xl font-bold tracking-tight text-white">
+                    <span class="lang-en">Skills & Endorsements</span>
+                    <span class="lang-fr">Compétences & Expertise</span>
+                </h2>
+            </div>
+
+            <div class="grid md:grid-cols-2 gap-6">
+                <div class="p-5 rounded-xl bg-slate-900/50 border border-slate-800/80 hover:border-cyan-500/50 transition duration-300" data-aos="zoom-in" data-aos-delay="100">
+                    <div class="flex items-center gap-3 mb-3">
+                        <i class="fa-solid fa-diagram-project text-cyan-400 text-xl"></i>
+                        <h4 class="font-bold text-white">
+                            <span class="lang-en">Project Governance & Agile</span>
+                            <span class="lang-fr">Gouvernance de Projet & Agile</span>
+                        </h4>
+                    </div>
+                    <p class="text-xs text-slate-400 leading-relaxed mb-3">
+                        <span class="lang-en">Agile & Scrum Delivery, Risk Assessment, Account Management, Stakeholder Communication, Milestones & Roadmap Planning.</span>
+                        <span class="lang-fr">Déploiement Agile & Scrum, Évaluation des Risques, Gestion de Compte, Communication Partenaires, Jalons & Feuille de Route.</span>
+                    </p>
+                    <div class="flex flex-wrap gap-1.5">
+                        <span class="px-2 py-0.5 rounded text-[11px] bg-slate-800 text-cyan-300">Scrum</span>
+                        <span class="px-2 py-0.5 rounded text-[11px] bg-slate-800 text-cyan-300">Agile</span>
+                        <span class="px-2 py-0.5 rounded text-[11px] bg-slate-800 text-cyan-300">Governance</span>
+                        <span class="px-2 py-0.5 rounded text-[11px] bg-slate-800 text-cyan-300">Account Mgmt</span>
+                    </div>
                 </div>
-                <div class="p-4 rounded-xl bg-slate-900/50 border border-slate-800/80 hover:border-cyan-500/50 transition duration-300" data-aos="zoom-in" data-aos-delay="300">
-                    <i class="fa-solid fa-gears text-cyan-400 mb-2 text-xl"></i>
-                    <h4 class="font-semibold text-white mb-1">DevOps Coordination</h4>
-                    <p class="text-xs text-slate-400">Release pipelines, cross-functional team synchronization.</p>
+
+                <div class="p-5 rounded-xl bg-slate-900/50 border border-slate-800/80 hover:border-cyan-500/50 transition duration-300" data-aos="zoom-in" data-aos-delay="200">
+                    <div class="flex items-center gap-3 mb-3">
+                        <i class="fa-solid fa-plane text-cyan-400 text-xl"></i>
+                        <h4 class="font-bold text-white">
+                            <span class="lang-en">Aerospace & Enterprise Accounts</span>
+                            <span class="lang-fr">Comptes Aéronautiques & Entreprise</span>
+                        </h4>
+                    </div>
+                    <p class="text-xs text-slate-400 leading-relaxed mb-3">
+                        <span class="lang-en">Enterprise Client Relations, Regulatory Compliance, Tier-1 Account Oversight, High-Stake SLAs.</span>
+                        <span class="lang-fr">Relations Clients Grands Comptes, Conformité Réglementaire, Gestion de Comptes de Rang 1, Engagements SLA Critiques.</span>
+                    </p>
+                    <div class="flex flex-wrap gap-1.5">
+                        <span class="px-2 py-0.5 rounded text-[11px] bg-slate-800 text-cyan-300">Aerospace</span>
+                        <span class="px-2 py-0.5 rounded text-[11px] bg-slate-800 text-cyan-300">Client Relations</span>
+                        <span class="px-2 py-0.5 rounded text-[11px] bg-slate-800 text-cyan-300">SLAs</span>
+                    </div>
                 </div>
-                <div class="p-4 rounded-xl bg-slate-900/50 border border-slate-800/80 hover:border-cyan-500/50 transition duration-300" data-aos="zoom-in" data-aos-delay="400">
-                    <i class="fa-solid fa-shield-halved text-cyan-400 mb-2 text-xl"></i>
-                    <h4 class="font-semibold text-white mb-1">Systems Operations</h4>
-                    <p class="text-xs text-slate-400">Incident resolution, infrastructure deployment scaling.</p>
+
+                <div class="p-5 rounded-xl bg-slate-900/50 border border-slate-800/80 hover:border-cyan-500/50 transition duration-300" data-aos="zoom-in" data-aos-delay="300">
+                    <div class="flex items-center gap-3 mb-3">
+                        <i class="fa-solid fa-gears text-cyan-400 text-xl"></i>
+                        <h4 class="font-bold text-white">
+                            <span class="lang-en">DevOps & Release Engineering</span>
+                            <span class="lang-fr">DevOps & Ingénierie de Release</span>
+                        </h4>
+                    </div>
+                    <p class="text-xs text-slate-400 leading-relaxed mb-3">
+                        <span class="lang-en">CI/CD Release Coordination, Versioning Cycles, Deployment Pipelines, Cross-Team Synchronization.</span>
+                        <span class="lang-fr">Coordination des Mises en Production CI/CD, Cycles de Versionnement, Pipelines de Déploiement, Synchronisation Inter-Équipes.</span>
+                    </p>
+                    <div class="flex flex-wrap gap-1.5">
+                        <span class="px-2 py-0.5 rounded text-[11px] bg-slate-800 text-cyan-300">CI/CD</span>
+                        <span class="px-2 py-0.5 rounded text-[11px] bg-slate-800 text-cyan-300">DevOps</span>
+                        <span class="px-2 py-0.5 rounded text-[11px] bg-slate-800 text-cyan-300">Release Mgmt</span>
+                    </div>
+                </div>
+
+                <div class="p-5 rounded-xl bg-slate-900/50 border border-slate-800/80 hover:border-cyan-500/50 transition duration-300" data-aos="zoom-in" data-aos-delay="400">
+                    <div class="flex items-center gap-3 mb-3">
+                        <i class="fa-solid fa-shield-halved text-cyan-400 text-xl"></i>
+                        <h4 class="font-bold text-white">
+                            <span class="lang-en">Systems Operations & Incident Management</span>
+                            <span class="lang-fr">Opérations Systèmes & Gestion d'Incidents</span>
+                        </h4>
+                    </div>
+                    <p class="text-xs text-slate-400 leading-relaxed mb-3">
+                        <span class="lang-en">Critical Incident Escalation, Infrastructure Reliability, Root-Cause Analysis, High-Availability Systems.</span>
+                        <span class="lang-fr">Escalade d'Incidents Critiques, Fiabilité des Infrastructures, Analyse des Causes Racine, Systèmes Haute Disponibilité.</span>
+                    </p>
+                    <div class="flex flex-wrap gap-1.5">
+                        <span class="px-2 py-0.5 rounded text-[11px] bg-slate-800 text-cyan-300">Incident Mgmt</span>
+                        <span class="px-2 py-0.5 rounded text-[11px] bg-slate-800 text-cyan-300">Operations</span>
+                        <span class="px-2 py-0.5 rounded text-[11px] bg-slate-800 text-cyan-300">SLA Enforcement</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Education Section -->
+    <section id="education" class="py-20 border-t border-slate-900 px-6 max-w-5xl mx-auto">
+        <div data-aos="fade-up" data-aos-duration="800">
+            <div class="flex items-center gap-3 mb-8">
+                <div class="p-2 rounded-lg bg-cyan-950 text-cyan-400 border border-cyan-800/50">
+                    <i class="fa-solid fa-graduation-cap text-lg"></i>
+                </div>
+                <h2 class="text-2xl font-bold tracking-tight text-white">
+                    <span class="lang-en">Education & Credentials</span>
+                    <span class="lang-fr">Formation & Diplômes</span>
+                </h2>
+            </div>
+
+            <div class="p-6 rounded-xl bg-slate-900/40 border border-slate-800/80 flex flex-col md:flex-row md:items-center justify-between gap-4">
+                <div class="space-y-1">
+                    <h3 class="text-lg font-bold text-white">
+                        <span class="lang-en">Higher University Degree</span>
+                        <span class="lang-fr">Diplôme Universitaire Supérieur</span>
+                    </h3>
+                    <p class="text-sm text-cyan-400">
+                        <span class="lang-en">Information Technology & Project Management</span>
+                        <span class="lang-fr">Technologies de l'Information & Gestion de Projet</span>
+                    </p>
+                    <p class="text-xs text-slate-400">
+                        <span class="lang-en">Higher level university qualification focused on systems engineering, management frameworks, and technical governance.</span>
+                        <span class="lang-fr">Diplôme d'enseignement supérieur axé sur l'ingénierie des systèmes, les cadres de gestion et la gouvernance technique.</span>
+                    </p>
+                </div>
+                <div class="flex items-center gap-2">
+                    <span class="px-3 py-1 rounded-full text-xs font-medium bg-cyan-950 text-cyan-300 border border-cyan-800/50">
+                        <i class="fa-solid fa-certificate mr-1"></i>
+                        <span class="lang-en">Verified Higher Degree</span>
+                        <span class="lang-fr">Diplôme Universitaire Vérifié</span>
+                    </span>
                 </div>
             </div>
         </div>
@@ -122,15 +352,19 @@
     <!-- Contact Section -->
     <section id="contact" class="py-20 border-t border-slate-900 px-6 max-w-5xl mx-auto">
         <div class="bg-gradient-to-br from-slate-900 to-slate-950 p-8 md:p-12 rounded-2xl border border-slate-800 text-center relative overflow-hidden shadow-xl" data-aos="fade-up" data-aos-duration="800">
-            <h2 class="text-2xl md:text-3xl font-bold text-white mb-4">Let's Connect</h2>
+            <h2 class="text-2xl md:text-3xl font-bold text-white mb-4">
+                <span class="lang-en">Let's Connect</span>
+                <span class="lang-fr">Prenons Contact</span>
+            </h2>
             <p class="text-slate-400 max-w-md mx-auto mb-6 text-sm md:text-base">
-                Open to professional discussions, strategic project oversight opportunities, and tech collaborations.
+                <span class="lang-en">Open to executive discussions, strategic project management oversight, and aerospace/tech collaborations.</span>
+                <span class="lang-fr">Ouvert aux échanges professionnels, à la direction stratégique de projets et aux collaborations technologiques/aéronautiques.</span>
             </p>
             <div class="flex justify-center gap-6">
-                <a href="mailto:contact@lachezar.fr" class="w-12 h-12 rounded-full bg-slate-800 flex items-center justify-center text-cyan-400 hover:bg-cyan-500 hover:text-slate-950 transition">
+                <a href="mailto:contact@lachezar.fr" class="w-12 h-12 rounded-full bg-slate-800 flex items-center justify-center text-cyan-400 hover:bg-cyan-500 hover:text-slate-950 transition" title="Email Direct">
                     <i class="fa-solid fa-envelope text-lg"></i>
                 </a>
-                <a href="https://linkedin.com" target="_blank" class="w-12 h-12 rounded-full bg-slate-800 flex items-center justify-center text-cyan-400 hover:bg-cyan-500 hover:text-slate-950 transition">
+                <a href="https://www.linkedin.com/in/lachozar/" target="_blank" rel="noopener noreferrer" class="w-12 h-12 rounded-full bg-slate-800 flex items-center justify-center text-cyan-400 hover:bg-cyan-500 hover:text-slate-950 transition" title="LinkedIn Profile">
                     <i class="fa-brands fa-linkedin-in text-lg"></i>
                 </a>
             </div>
@@ -139,7 +373,7 @@
 
     <!-- Footer -->
     <footer class="py-8 border-t border-slate-900 text-center text-xs text-slate-500">
-        <p>&copy; 2026 Lachezar Dimitrov. All rights reserved.</p>
+        <p>&copy; 2026 Lachezar Dimitrov. <span class="lang-en">All rights reserved.</span><span class="lang-fr">Tous droits réservés.</span></p>
     </footer>
 
     <!-- AOS Animation Library JS -->
@@ -149,6 +383,22 @@
             once: true,
             offset: 50,
         });
+
+        // Language Toggle Functionality
+        function toggleLanguage() {
+            const body = document.body;
+            const langLabel = document.getElementById('lang-label');
+            
+            if (body.classList.contains('lang-en')) {
+                body.classList.remove('lang-en');
+                body.classList.add('lang-fr');
+                langLabel.textContent = 'EN';
+            } else {
+                body.classList.remove('lang-fr');
+                body.classList.add('lang-en');
+                langLabel.textContent = 'FR';
+            }
+        }
     </script>
 </body>
 </html>
