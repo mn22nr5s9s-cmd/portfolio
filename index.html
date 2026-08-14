@@ -9,9 +9,10 @@
     <!-- AOS Animation Library CSS -->
     <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
     <style>
-        /* Language Toggle Visibility Rules */
-        body.lang-en .lang-fr { display: none !important; }
-        body.lang-fr .lang-en { display: none !important; }
+        /* Multi-Language Visibility Rules */
+        body.lang-en :is(.lang-fr, .lang-zh) { display: none !important; }
+        body.lang-fr :is(.lang-en, .lang-zh) { display: none !important; }
+        body.lang-zh :is(.lang-en, .lang-fr) { display: none !important; }
     </style>
 </head>
 <body class="lang-en bg-slate-950 text-slate-100 font-sans antialiased selection:bg-cyan-500 selection:text-slate-950 overflow-x-hidden">
@@ -19,29 +20,37 @@
     <!-- Header / Navigation -->
     <header class="fixed top-0 left-0 right-0 z-50 bg-slate-950/80 backdrop-blur-md border-b border-slate-800/80">
         <div class="max-w-5xl mx-auto px-6 h-16 flex items-center justify-between">
-            <a href="#" class="font-bold text-lg tracking-wider text-cyan-400">LD<span class="text-slate-100">.</span></a>
+            <!-- Brand Logo -->
+            <a href="#" class="flex items-center group">
+                <img src="transparent_logo.png" alt="LD Logo" class="h-9 w-auto object-contain transition group-hover:scale-105">
+            </a>
             
             <div class="flex items-center gap-6">
                 <nav class="hidden md:flex space-x-8 text-sm font-medium text-slate-300">
                     <a href="#about" class="hover:text-cyan-400 transition">
                         <span class="lang-en">About</span>
                         <span class="lang-fr">À propos</span>
+                        <span class="lang-zh">关于我</span>
                     </a>
                     <a href="#experience" class="hover:text-cyan-400 transition">
                         <span class="lang-en">Experience</span>
                         <span class="lang-fr">Expérience</span>
+                        <span class="lang-zh">工作经历</span>
                     </a>
                     <a href="#skills" class="hover:text-cyan-400 transition">
                         <span class="lang-en">Expertise</span>
                         <span class="lang-fr">Expertise</span>
+                        <span class="lang-zh">专业技能</span>
                     </a>
                     <a href="#education" class="hover:text-cyan-400 transition">
                         <span class="lang-en">Education</span>
                         <span class="lang-fr">Formation</span>
+                        <span class="lang-zh">教育背景</span>
                     </a>
                     <a href="#contact" class="hover:text-cyan-400 transition">
                         <span class="lang-en">Contact</span>
                         <span class="lang-fr">Contact</span>
+                        <span class="lang-zh">联系方式</span>
                     </a>
                 </nav>
 
@@ -61,6 +70,7 @@
                 <span class="w-2 h-2 rounded-full bg-cyan-400 animate-pulse"></span>
                 <span class="lang-en">Available for strategic tech leadership</span>
                 <span class="lang-fr">Disponible pour le leadership technique stratégique</span>
+                <span class="lang-zh">可承接战略技术领导力合作</span>
             </div>
             <h1 class="text-4xl md:text-6xl font-extrabold tracking-tight text-white">
                 Lachezar Dimitrov
@@ -68,21 +78,25 @@
             <p class="text-xl md:text-2xl font-medium text-cyan-400">
                 <span class="lang-en">IT Project Manager & High-Level Operations Lead</span>
                 <span class="lang-fr">Chef de Projet IT & Responsable des Opérations</span>
+                <span class="lang-zh">IT 项目经理 & 高级运维负责人</span>
             </p>
             <p class="text-slate-400 text-base md:text-lg max-w-2xl leading-relaxed">
                 <span class="lang-en">Bridging complex engineering solutions and cross-functional teams. Specializing in high-stakes technical implementations, aerospace accounts, DevOps pipeline governance, and agile delivery frameworks in Toulouse, France.</span>
                 <span class="lang-fr">Lien entre solutions d'ingénierie complexes et équipes pluridisciplinaires. Spécialisé dans les déploiements techniques critiques, la gestion de comptes aéronautiques, la gouvernance DevOps et les méthodologies agiles à Toulouse, France.</span>
+                <span class="lang-zh">贯通复杂工程方案与跨职能团队。专注于高规格技术实施、航空航天客户管理、DevOps 流水线治理及敏捷交付框架。常驻法国图卢兹。</span>
             </p>
             <div class="pt-4 flex flex-wrap gap-4 items-center">
                 <a href="#contact" class="px-6 py-3 rounded-lg bg-cyan-500 text-slate-950 font-semibold hover:bg-cyan-400 transition shadow-lg shadow-cyan-500/20 flex items-center gap-2">
                     <i class="fa-solid fa-paper-plane"></i>
                     <span class="lang-en">Get in Touch</span>
                     <span class="lang-fr">Me Contacter</span>
+                    <span class="lang-zh">联系我</span>
                 </a>
                 <a href="#experience" class="px-6 py-3 rounded-lg bg-slate-900 border border-slate-800 font-semibold hover:bg-slate-800 transition text-slate-300 flex items-center gap-2">
                     <i class="fa-solid fa-briefcase text-cyan-400"></i>
                     <span class="lang-en">View Career</span>
                     <span class="lang-fr">Voir mon Parcours</span>
+                    <span class="lang-zh">查看履历</span>
                 </a>
             </div>
         </div>
@@ -98,6 +112,7 @@
                 <h2 class="text-2xl font-bold tracking-tight text-white">
                     <span class="lang-en">Profile & Summary</span>
                     <span class="lang-fr">Profil & Synthèse</span>
+                    <span class="lang-zh">个人简介</span>
                 </h2>
             </div>
             <div class="grid md:grid-cols-2 gap-8 text-slate-300 leading-relaxed">
@@ -108,33 +123,43 @@
                     <p class="lang-fr">
                         En tant que Chef de Projet IT expérimenté, j'orchestre des déploiements complexes de logiciels et d'infrastructures, en alignant les flux de travail techniques avec les objectifs stratégiques de l'entreprise. Ma carrière repose sur la direction de comptes techniques critiques, la coordination de cycles DevOps multidisciplinaires et la garantie d'une haute qualité de livrables sous des délais réglementaires stricts.
                     </p>
+                    <p class="lang-zh">
+                        作为一名经验丰富的 IT 项目经理，我统筹复杂的软件与基础设施上线，将技术工程工作流与严谨的企业目标保持一致。我的职业生涯围绕管理关键技术客户、协调多学科 DevOps 周期，并在严格的合规期限内保持高品质的发布交付。
+                    </p>
                     <p class="lang-en">
                         Based in the Toulouse aerospace hub, I combine deep technical insight with structured project governance to keep engineering squads aligned with business milestones.
                     </p>
                     <p class="lang-fr">
                         Basé au cœur du pôle aéronautique de Toulouse, j'associe une vision technique approfondie à une gouvernance de projet structurée afin de maintenir les équipes d'ingénierie alignées sur les jalons stratégiques.
                     </p>
+                    <p class="lang-zh">
+                        立足图卢兹航空航天产业枢纽，我将深入的技术洞察与结构化的项目治理相结合，确保工程团队始终紧跟业务里程碑。
+                    </p>
                 </div>
                 <div class="space-y-4 bg-slate-900/40 p-6 rounded-xl border border-slate-800/60">
                     <h3 class="text-sm font-semibold uppercase tracking-wider text-cyan-400 mb-2">
                         <span class="lang-en">Highlights & Leadership Focus</span>
                         <span class="lang-fr">Points Forts & Orientations Majeures</span>
+                        <span class="lang-zh">核心优势与领导力重点</span>
                     </h3>
                     <ul class="space-y-3 text-sm text-slate-300">
                         <li class="flex items-start gap-3">
                             <i class="fa-solid fa-circle-check text-cyan-400 mt-1"></i>
                             <span class="lang-en"><strong>Enterprise Account Governance:</strong> Strategic account manager for tier-1 aerospace partners.</span>
                             <span class="lang-fr"><strong>Gouvernance de Comptes Entreprise :</strong> Gestionnaire de compte stratégique pour des partenaires aéronautiques majeurs.</span>
+                            <span class="lang-zh"><strong>企业客户治理：</strong> 一级航空航天合作伙伴的战略客户经理。</span>
                         </li>
                         <li class="flex items-start gap-3">
                             <i class="fa-solid fa-circle-check text-cyan-400 mt-1"></i>
                             <span class="lang-en"><strong>DevOps & Deployment Execution:</strong> Managing continuous release flows, build versioning, and environment synchronization.</span>
                             <span class="lang-fr"><strong>DevOps & Exécution des Déploiements :</strong> Pilotage des flux de release continus, du versionnement et de la synchronisation des environnements.</span>
+                            <span class="lang-zh"><strong>DevOps 与交付执行：</strong> 管理持续发布流、构建版本控制及环境同步。</span>
                         </li>
                         <li class="flex items-start gap-3">
                             <i class="fa-solid fa-circle-check text-cyan-400 mt-1"></i>
                             <span class="lang-en"><strong>High-Priority Incident Management:</strong> Rapid crisis mitigation and SLA protection for mission-critical IT infrastructure.</span>
                             <span class="lang-fr"><strong>Gestion des Incidents Majeurs :</strong> Résolution rapide des crises et protection des SLA pour les infrastructures IT critiques.</span>
+                            <span class="lang-zh"><strong>高优先级事件管理：</strong> 快速危机干预与 SLA 服务保障，维护关键 IT 基础设施。</span>
                         </li>
                     </ul>
                 </div>
@@ -152,6 +177,7 @@
                 <h2 class="text-2xl font-bold tracking-tight text-white">
                     <span class="lang-en">Professional Experience</span>
                     <span class="lang-fr">Expérience Professionnelle</span>
+                    <span class="lang-zh">工作经历</span>
                 </h2>
             </div>
             
@@ -163,12 +189,18 @@
                         <h3 class="text-xl font-bold text-white">
                             <span class="lang-en">IT Project Manager</span>
                             <span class="lang-fr">Chef de Projet IT</span>
+                            <span class="lang-zh">IT 项目经理</span>
                         </h3>
-                        <span class="text-xs font-semibold px-2.5 py-1 rounded bg-slate-900 border border-slate-800 text-slate-400">Toulouse, France</span>
+                        <span class="text-xs font-semibold px-2.5 py-1 rounded bg-slate-900 border border-slate-800 text-slate-400">
+                            <span class="lang-en">Toulouse, France</span>
+                            <span class="lang-fr">Toulouse, France</span>
+                            <span class="lang-zh">法国图卢兹</span>
+                        </span>
                     </div>
                     <p class="text-sm font-medium text-cyan-400 mb-3">
                         <span class="lang-en">Aerospace & Enterprise Accounts</span>
                         <span class="lang-fr">Comptes Aéronautiques & Grands Comptes</span>
+                        <span class="lang-zh">航空航天与企业级客户</span>
                     </p>
                     <ul class="space-y-2 text-slate-400 text-sm leading-relaxed list-disc list-inside lang-en">
                         <li>Direct technical account operations, managing full lifecycle delivery for major enterprise clients.</li>
@@ -182,6 +214,12 @@
                         <li>Animation du planning de release agile, des revues de sprint et de la synchronisation entre équipes de développement et d'opérations.</li>
                         <li>Alignement des parties prenantes exécutives, gestion des registres de risques et contrôle des modifications du périmètre.</li>
                     </ul>
+                    <ul class="space-y-2 text-slate-400 text-sm leading-relaxed list-disc list-inside lang-zh">
+                        <li>指导技术客户运营，管理大型企业客户的全生命周期交付。</li>
+                        <li>治理软件发布流水线及跨职能 DevOps 工作流，以满足严格的行业标准与合规要求。</li>
+                        <li>主导敏捷发布规划、迭代复盘（Sprint Reviews）以及研发与运维部门间的跨团队同步。</li>
+                        <li>保持高管干系人对齐、风险登记册管理及范围变更控制。</li>
+                    </ul>
                 </div>
 
                 <!-- Role 2 -->
@@ -191,15 +229,18 @@
                         <h3 class="text-xl font-bold text-white">
                             <span class="lang-en">Technical Operations & Governance Lead</span>
                             <span class="lang-fr">Responsable Opérations Techniques & Gouvernance</span>
+                            <span class="lang-zh">技术运维与治理负责人</span>
                         </h3>
                         <span class="text-xs font-semibold px-2.5 py-1 rounded bg-slate-900 border border-slate-800 text-slate-400">
                             <span class="lang-en">Systems Architecture & Operations</span>
                             <span class="lang-fr">Architecture Systèmes & Opérations</span>
+                            <span class="lang-zh">系统架构与运维</span>
                         </span>
                     </div>
                     <p class="text-sm font-medium text-cyan-400 mb-3">
                         <span class="lang-en">Enterprise Systems & Infrastructure</span>
                         <span class="lang-fr">Systèmes d'Entreprise & Infrastructures</span>
+                        <span class="lang-zh">企业级系统与基础设施</span>
                     </p>
                     <ul class="space-y-2 text-slate-400 text-sm leading-relaxed list-disc list-inside lang-en">
                         <li>Managed critical system deployments and emergency incident resolutions to protect service level agreements (SLAs).</li>
@@ -210,6 +251,11 @@
                         <li>Gestion des déploiements de systèmes critiques et résolution des incidents urgents pour maintenir les engagements de service (SLA).</li>
                         <li>Supervision de la préparation des infrastructures, des pipelines de mise en production DevOps et de l'intégrité des versions.</li>
                         <li>Optimisation des standards opérationnels techniques, analyse des causes profondes post-incident et stratégies de maintenance préventive.</li>
+                    </ul>
+                    <ul class="space-y-2 text-slate-400 text-sm leading-relaxed list-disc list-inside lang-zh">
+                        <li>管理关键系统部署与紧急事件处理，保障服务等级协议（SLA）。</li>
+                        <li>监督基础设施准备状态、DevOps 发布流水线及版本控制完整性。</li>
+                        <li>优化技术运维标准、事后根本原因分析（RCA）及预防性维护策略。</li>
                     </ul>
                 </div>
             </div>
@@ -226,6 +272,7 @@
                 <h2 class="text-2xl font-bold tracking-tight text-white">
                     <span class="lang-en">Skills & Endorsements</span>
                     <span class="lang-fr">Compétences & Expertise</span>
+                    <span class="lang-zh">技能与专业领域</span>
                 </h2>
             </div>
 
@@ -236,11 +283,13 @@
                         <h4 class="font-bold text-white">
                             <span class="lang-en">Project Governance & Agile</span>
                             <span class="lang-fr">Gouvernance de Projet & Agile</span>
+                            <span class="lang-zh">项目治理与敏捷开发</span>
                         </h4>
                     </div>
                     <p class="text-xs text-slate-400 leading-relaxed mb-3">
                         <span class="lang-en">Agile & Scrum Delivery, Risk Assessment, Account Management, Stakeholder Communication, Milestones & Roadmap Planning.</span>
                         <span class="lang-fr">Déploiement Agile & Scrum, Évaluation des Risques, Gestion de Compte, Communication Partenaires, Jalons & Feuille de Route.</span>
+                        <span class="lang-zh">敏捷与 Scrum 交付、风险评估、客户管理、干系人沟通、里程碑与路线图规划。</span>
                     </p>
                     <div class="flex flex-wrap gap-1.5">
                         <span class="px-2 py-0.5 rounded text-[11px] bg-slate-800 text-cyan-300">Scrum</span>
@@ -256,11 +305,13 @@
                         <h4 class="font-bold text-white">
                             <span class="lang-en">Aerospace & Enterprise Accounts</span>
                             <span class="lang-fr">Comptes Aéronautiques & Entreprise</span>
+                            <span class="lang-zh">航空航天与企业客户</span>
                         </h4>
                     </div>
                     <p class="text-xs text-slate-400 leading-relaxed mb-3">
                         <span class="lang-en">Enterprise Client Relations, Regulatory Compliance, Tier-1 Account Oversight, High-Stake SLAs.</span>
                         <span class="lang-fr">Relations Clients Grands Comptes, Conformité Réglementaire, Gestion de Comptes de Rang 1, Engagements SLA Critiques.</span>
+                        <span class="lang-zh">企业级客户关系、合规管理、核心客户监督、高标准 SLA 执行。</span>
                     </p>
                     <div class="flex flex-wrap gap-1.5">
                         <span class="px-2 py-0.5 rounded text-[11px] bg-slate-800 text-cyan-300">Aerospace</span>
@@ -275,11 +326,13 @@
                         <h4 class="font-bold text-white">
                             <span class="lang-en">DevOps & Release Engineering</span>
                             <span class="lang-fr">DevOps & Ingénierie de Release</span>
+                            <span class="lang-zh">DevOps 与发布工程</span>
                         </h4>
                     </div>
                     <p class="text-xs text-slate-400 leading-relaxed mb-3">
                         <span class="lang-en">CI/CD Release Coordination, Versioning Cycles, Deployment Pipelines, Cross-Team Synchronization.</span>
                         <span class="lang-fr">Coordination des Mises en Production CI/CD, Cycles de Versionnement, Pipelines de Déploiement, Synchronisation Inter-Équipes.</span>
+                        <span class="lang-zh">CI/CD 发布协调、版本控制周期、部署流水线、跨团队同步。</span>
                     </p>
                     <div class="flex flex-wrap gap-1.5">
                         <span class="px-2 py-0.5 rounded text-[11px] bg-slate-800 text-cyan-300">CI/CD</span>
@@ -294,11 +347,13 @@
                         <h4 class="font-bold text-white">
                             <span class="lang-en">Systems Operations & Incident Management</span>
                             <span class="lang-fr">Opérations Systèmes & Gestion d'Incidents</span>
+                            <span class="lang-zh">系统运维与事件管理</span>
                         </h4>
                     </div>
                     <p class="text-xs text-slate-400 leading-relaxed mb-3">
                         <span class="lang-en">Critical Incident Escalation, Infrastructure Reliability, Root-Cause Analysis, High-Availability Systems.</span>
                         <span class="lang-fr">Escalade d'Incidents Critiques, Fiabilité des Infrastructures, Analyse des Causes Racine, Systèmes Haute Disponibilité.</span>
+                        <span class="lang-zh">关键事件升级、基础设施可靠性、根本原因分析（RCA）、高可用系统。</span>
                     </p>
                     <div class="flex flex-wrap gap-1.5">
                         <span class="px-2 py-0.5 rounded text-[11px] bg-slate-800 text-cyan-300">Incident Mgmt</span>
@@ -320,6 +375,7 @@
                 <h2 class="text-2xl font-bold tracking-tight text-white">
                     <span class="lang-en">Education & Credentials</span>
                     <span class="lang-fr">Formation & Diplômes</span>
+                    <span class="lang-zh">教育背景与资质</span>
                 </h2>
             </div>
 
@@ -328,14 +384,17 @@
                     <h3 class="text-lg font-bold text-white">
                         <span class="lang-en">Higher University Degree</span>
                         <span class="lang-fr">Diplôme Universitaire Supérieur</span>
+                        <span class="lang-zh">高等大学学位</span>
                     </h3>
                     <p class="text-sm text-cyan-400">
                         <span class="lang-en">Information Technology & Project Management</span>
                         <span class="lang-fr">Technologies de l'Information & Gestion de Projet</span>
+                        <span class="lang-zh">信息技术与项目管理</span>
                     </p>
                     <p class="text-xs text-slate-400">
                         <span class="lang-en">Higher level university qualification focused on systems engineering, management frameworks, and technical governance.</span>
                         <span class="lang-fr">Diplôme d'enseignement supérieur axé sur l'ingénierie des systèmes, les cadres de gestion et la gouvernance technique.</span>
+                        <span class="lang-zh">专注于系统工程、管理框架与技术治理的高等大学资质。</span>
                     </p>
                 </div>
                 <div class="flex items-center gap-2">
@@ -343,6 +402,7 @@
                         <i class="fa-solid fa-certificate mr-1"></i>
                         <span class="lang-en">Verified Higher Degree</span>
                         <span class="lang-fr">Diplôme Universitaire Vérifié</span>
+                        <span class="lang-zh">已验证高等学位</span>
                     </span>
                 </div>
             </div>
@@ -355,10 +415,12 @@
             <h2 class="text-2xl md:text-3xl font-bold text-white mb-4">
                 <span class="lang-en">Let's Connect</span>
                 <span class="lang-fr">Prenons Contact</span>
+                <span class="lang-zh">保持联系</span>
             </h2>
             <p class="text-slate-400 max-w-md mx-auto mb-6 text-sm md:text-base">
                 <span class="lang-en">Open to executive discussions, strategic project management oversight, and aerospace/tech collaborations.</span>
                 <span class="lang-fr">Ouvert aux échanges professionnels, à la direction stratégique de projets et aux collaborations technologiques/aéronautiques.</span>
+                <span class="lang-zh">欢迎探讨高管交流、战略项目管理监督及航空航天与技术合作。</span>
             </p>
             <div class="flex justify-center gap-6">
                 <a href="mailto:contact@lachezar.fr" class="w-12 h-12 rounded-full bg-slate-800 flex items-center justify-center text-cyan-400 hover:bg-cyan-500 hover:text-slate-950 transition" title="Email Direct">
@@ -373,7 +435,11 @@
 
     <!-- Footer -->
     <footer class="py-8 border-t border-slate-900 text-center text-xs text-slate-500">
-        <p>&copy; 2026 Lachezar Dimitrov. <span class="lang-en">All rights reserved.</span><span class="lang-fr">Tous droits réservés.</span></p>
+        <p>&copy; 2026 Lachezar Dimitrov. 
+            <span class="lang-en">All rights reserved.</span>
+            <span class="lang-fr">Tous droits réservés.</span>
+            <span class="lang-zh">保留所有权利。</span>
+        </p>
     </footer>
 
     <!-- AOS Animation Library JS -->
@@ -384,7 +450,7 @@
             offset: 50,
         });
 
-        // Language Toggle Functionality
+        // 3-Way Language Toggle (EN -> FR -> ZH -> EN)
         function toggleLanguage() {
             const body = document.body;
             const langLabel = document.getElementById('lang-label');
@@ -392,9 +458,13 @@
             if (body.classList.contains('lang-en')) {
                 body.classList.remove('lang-en');
                 body.classList.add('lang-fr');
+                langLabel.textContent = '中文';
+            } else if (body.classList.contains('lang-fr')) {
+                body.classList.remove('lang-fr');
+                body.classList.add('lang-zh');
                 langLabel.textContent = 'EN';
             } else {
-                body.classList.remove('lang-fr');
+                body.classList.remove('lang-zh');
                 body.classList.add('lang-en');
                 langLabel.textContent = 'FR';
             }
