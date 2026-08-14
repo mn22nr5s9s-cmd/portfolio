@@ -54,11 +54,29 @@
                     </a>
                 </nav>
 
-                <!-- Language Switcher Button (Shows active language) -->
-                <button id="lang-toggle" onclick="toggleLanguage()" class="px-3 py-1.5 rounded-lg bg-slate-900 border border-slate-800 text-xs font-semibold text-cyan-400 hover:bg-slate-800 hover:border-cyan-500/50 transition flex items-center gap-2 cursor-pointer shadow-sm">
-                    <i class="fa-solid fa-globe text-cyan-400"></i>
-                    <span id="lang-label" class="tracking-wider">EN</span>
-                </button>
+                <!-- CUSTOM UI DROPDOWN (Clean Full-Word Labels Only) -->
+                <div class="relative inline-block text-left" id="custom-lang-dropdown">
+                    <!-- Trigger Button -->
+                    <button id="lang-btn" type="button" onclick="toggleLangMenu()" class="flex items-center gap-3 px-5 py-2.5 rounded-2xl bg-slate-900/90 border border-slate-700/80 text-cyan-400 font-bold text-sm shadow-md hover:border-cyan-400/80 hover:shadow-[0_0_20px_rgba(6,182,212,0.25)] transition-all duration-300 transform hover:-translate-y-0.5 group focus:outline-none cursor-pointer">
+                        <i class="fa-solid fa-globe text-cyan-400 text-sm transition-transform duration-500 group-hover:rotate-45"></i>
+                        <span id="selected-lang-label">English</span>
+                        <i id="lang-arrow" class="fa-solid fa-chevron-down text-xs text-cyan-400/80 transition-transform duration-300 ml-1"></i>
+                    </button>
+
+                    <!-- Fully Styled Floating Menu Card -->
+                    <div id="lang-menu" class="absolute right-0 mt-3 w-52 rounded-2xl bg-slate-900/95 border border-slate-700/80 shadow-2xl backdrop-blur-xl p-2 opacity-0 scale-95 pointer-events-none transition-all duration-200 ease-out origin-top-right z-50">
+                        <button onclick="selectLanguage('en', 'English')" class="lang-option active w-full flex items-center justify-between px-4 py-3 text-sm font-semibold text-slate-200 rounded-xl hover:bg-cyan-500/15 hover:text-cyan-400 transition-all duration-200 group cursor-pointer">
+                            <span>English</span>
+                        </button>
+                        <button onclick="selectLanguage('fr', 'Français')" class="lang-option w-full flex items-center justify-between px-4 py-3 text-sm font-semibold text-slate-200 rounded-xl hover:bg-cyan-500/15 hover:text-cyan-400 transition-all duration-200 group cursor-pointer">
+                            <span>Français</span>
+                        </button>
+                        <button onclick="selectLanguage('zh', '中文')" class="lang-option w-full flex items-center justify-between px-4 py-3 text-sm font-semibold text-slate-200 rounded-xl hover:bg-cyan-500/15 hover:text-cyan-400 transition-all duration-200 group cursor-pointer">
+                            <span>中文</span>
+                        </button>
+                    </div>
+                </div>
+
             </div>
         </div>
     </header>
@@ -450,25 +468,65 @@
             offset: 50,
         });
 
-        // 3-Way Language Toggle (EN -> FR -> ZH -> EN)
-        function toggleLanguage() {
-            const body = document.body;
-            const langLabel = document.getElementById('lang-label');
+        /* --- Custom Language Dropdown Logic --- */
+        function toggleLangMenu() {
+            const menu = document.getElementById('lang-menu');
+            const arrow = document.getElementById('lang-arrow');
+            const isOpen = !menu.classList.contains('opacity-0');
             
-            if (body.classList.contains('lang-en')) {
-                body.classList.remove('lang-en');
-                body.classList.add('lang-fr');
-                langLabel.textContent = 'FR';
-            } else if (body.classList.contains('lang-fr')) {
-                body.classList.remove('lang-fr');
-                body.classList.add('lang-zh');
-                langLabel.textContent = 'ZH';
+            if (isOpen) {
+                closeLangMenu();
             } else {
-                body.classList.remove('lang-zh');
-                body.classList.add('lang-en');
-                langLabel.textContent = 'EN';
+                menu.classList.remove('opacity-0', 'scale-95', 'pointer-events-none');
+                menu.classList.add('opacity-100', 'scale-100', 'pointer-events-auto');
+                arrow.classList.add('rotate-180');
             }
         }
+
+        function closeLangMenu() {
+            const menu = document.getElementById('lang-menu');
+            const arrow = document.getElementById('lang-arrow');
+            if (menu && arrow) {
+                menu.classList.add('opacity-0', 'scale-95', 'pointer-events-none');
+                menu.classList.remove('opacity-100', 'scale-100', 'pointer-events-auto');
+                arrow.classList.remove('rotate-180');
+            }
+        }
+
+        function selectLanguage(lang, label) {
+            // Update trigger button label
+            document.getElementById('selected-lang-label').innerText = label;
+            
+            // Switch active CSS language classes on body
+            const body = document.body;
+            body.classList.remove('lang-en', 'lang-fr', 'lang-zh');
+            body.classList.add(`lang-${lang}`);
+            
+            // Manage active class without modifying the checkmark
+            const options = document.querySelectorAll('.lang-option');
+            options.forEach(opt => {
+                if (opt.innerText.trim().startsWith(label)) {
+                    opt.classList.add('active');
+                } else {
+                    opt.classList.remove('active');
+                }
+            });
+            
+            closeLangMenu();
+        }
+
+        // Close dropdown on click outside
+        document.addEventListener('click', (e) => {
+            const dropdown = document.getElementById('custom-lang-dropdown');
+            if (dropdown && !dropdown.contains(e.target)) {
+                closeLangMenu();
+            }
+        });
+
+        // Close on ESC key press
+        document.addEventListener('keydown', (e) => {
+            if (e.key === 'Escape') closeLangMenu();
+        });
     </script>
 </body>
 </html>
